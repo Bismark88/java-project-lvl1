@@ -24,3 +24,8 @@ compileJava {
 repositories {
 	mavenCentral()
 }
+
+run {
+	standardInput = System.in
+}
+
