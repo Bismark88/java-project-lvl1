@@ -4,4 +4,5 @@
 [![GitHub Actions Demo](https://github.com/Bismark88/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/Bismark88/java-project-lvl1/actions/workflows/github-actions-demo.yml)
 <p>https://asciinema.org/a/zjCCuOveWzShlF3vfoztIYxeb<br>
 https://asciinema.org/a/K5hH1aqxkYIi4kiHNKxD0dOmK<br>
-https://asciinema.org/a/472062</p>
+https://asciinema.org/a/472062<br>
+https://asciinema.org/a/472380</p>
