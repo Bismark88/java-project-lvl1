@@ -7,7 +7,7 @@ import hexlet.code.Engine;
 public class Even extends Engine {
     private static final String QUESTION = "Answer 'yes' if number even otherwise answer 'no'.";
 
-    public static void menu() {
+    public static void gameEven() {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
 
