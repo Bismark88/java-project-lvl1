@@ -14,7 +14,7 @@ public class Calc {
             int number1 = Engine.getRandomNumber(Engine.MAX_RANDOM);
             int number2 = Engine.getRandomNumber(Engine.MAX_RANDOM);
             int numberMathOperation = Engine.getRandomNumber(RANGE_OPERATION);
-            gameQuestion[i] = String.format("%s%s%s", number1, MATH_OPERATION[numberMathOperation], number2);
+            gameQuestion[i] = String.format("%s %s %s", number1, MATH_OPERATION[numberMathOperation], number2);
             correctAnswer[i] = getCorrectAnswer(number1, number2, numberMathOperation);
         }
         Engine.runGame(GAME_RULES, gameQuestion, correctAnswer);
