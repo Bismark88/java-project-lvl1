@@ -20,29 +20,29 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
-        char command = scanner.next().charAt(0);
+        String command = scanner.next();
         System.out.println("Your choice: " + command);
 
         switch (command) {
-            case '1':
-                Greet.greet();
+            case "1":
+                Greet.gameGreet();
                 break;
-            case '2':
+            case "2":
                 Even.gameEven();
                 break;
-            case '3':
-                Calc.calc();
+            case "3":
+                Calc.gameCalc();
                 break;
-            case '4':
+            case "4":
                 Gcd.gameGcd();
                 break;
-            case '5':
+            case "5":
                 Progression.gameProgression();
                 break;
-            case '6':
+            case "6":
                 Prime.gamePrime();
                 break;
-            case '0':
+            case "0":
                 System.out.println("Exit");
                 break;
             default:
