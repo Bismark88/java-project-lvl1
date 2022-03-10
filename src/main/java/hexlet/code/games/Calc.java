@@ -8,33 +8,28 @@ public class Calc {
     private static final String[] MATH_OPERATION = new String[]{"+", "-", "*"};
 
     public static void gameCalc() {
-        String[] gameQuestion = new String[Engine.ROUND_COUNTER];
-        String[] correctAnswer = new String[Engine.ROUND_COUNTER];
+        String[][] gameQuestionAndAnswer = new String[Engine.ROUND_COUNTER][Engine.SUBARRAY_LENGTH];
         for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int number1 = Engine.getRandomNumber(Engine.MAX_RANDOM);
             int number2 = Engine.getRandomNumber(Engine.MAX_RANDOM);
             int numberMathOperation = Engine.getRandomNumber(RANGE_OPERATION);
-            gameQuestion[i] = String.format("%s %s %s", number1, MATH_OPERATION[numberMathOperation], number2);
-            correctAnswer[i] = getCorrectAnswer(number1, number2, numberMathOperation);
+            gameQuestionAndAnswer[i][Engine.INDEX_QUESTION] = String.format("%s %s %s",
+                    number1, MATH_OPERATION[numberMathOperation], number2);
+            gameQuestionAndAnswer[i][Engine.INDEX_ANSWER] = getCorrectAnswer(number1, number2, numberMathOperation);
         }
-        Engine.runGame(GAME_RULES, gameQuestion, correctAnswer);
+        Engine.runGame(GAME_RULES, gameQuestionAndAnswer);
     }
 
     private static String getCorrectAnswer(int number1, int number2, int numberMathOperation) {
-        String correctAnswer = "";
         switch (numberMathOperation) {
             case 0:
-                correctAnswer = Integer.toString(number1 + number2);
-                break;
+                return Integer.toString(number1 + number2);
             case 1:
-                correctAnswer = Integer.toString(number1 - number2);
-                break;
+                return Integer.toString(number1 - number2);
             case 2:
-                correctAnswer = Integer.toString(number1 * number2);
-                break;
+                return Integer.toString(number1 * number2);
             default: break;
-
         }
-        return correctAnswer;
+        return null;
     }
 }

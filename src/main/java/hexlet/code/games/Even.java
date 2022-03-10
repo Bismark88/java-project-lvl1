@@ -6,22 +6,20 @@ public class Even {
     private static final String GAME_RULES = "Answer 'yes' if number even otherwise answer 'no'.";
 
     public static void gameEven() {
-        String[] gameQuestion = new String[Engine.ROUND_COUNTER];
-        String[] correctAnswer = new String[Engine.ROUND_COUNTER];
+        String[][] gameQuestionAndAnswer = new String[Engine.ROUND_COUNTER][Engine.SUBARRAY_LENGTH];
         for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int number = Engine.getRandomNumber(Engine.MAX_RANDOM);
-            gameQuestion[i] = String.valueOf(number);
-            correctAnswer[i] = getCorrectAnswer(number);
+            gameQuestionAndAnswer[i][Engine.INDEX_QUESTION] = String.valueOf(number);
+            gameQuestionAndAnswer[i][Engine.INDEX_ANSWER] = isEvenNumber(number) ? "yes" : "no";
         }
-        Engine.runGame(GAME_RULES, gameQuestion, correctAnswer);
+        Engine.runGame(GAME_RULES, gameQuestionAndAnswer);
     }
 
-    private static String getCorrectAnswer(int number) {
-        String correctAnswer = "no";
+    private static boolean isEvenNumber(int number) {
         if (number % 2 == 0) {
-            correctAnswer = "yes";
+            return true;
         }
-        return correctAnswer;
+        return false;
     }
 
 }
