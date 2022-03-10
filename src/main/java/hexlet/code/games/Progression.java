@@ -10,17 +10,16 @@ public class Progression {
     private static int numberHiddenElement;
 
     public static void gameProgression() {
-        String[] gameQuestion = new String[Engine.ROUND_COUNTER];
-        String[] correctAnswer = new String[Engine.ROUND_COUNTER];
+        String[][] gameQuestionAndAnswer = new String[Engine.ROUND_COUNTER][Engine.SUBARRAY_LENGTH];
         for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int firstElement = Engine.getRandomNumber(Engine.MAX_RANDOM);
             int stepProgression = Engine.getRandomNumber(Engine.MAX_RANDOM);
             range = getArithmeticalProgression(firstElement, stepProgression);
-            correctAnswer[i] = getCorrectAnswer(range);
+            gameQuestionAndAnswer[i][Engine.INDEX_ANSWER] = getCorrectAnswer(range);
             range = getRangeWithHiddenElement(range, numberHiddenElement);
-            gameQuestion[i] = String.join(" ", range);
+            gameQuestionAndAnswer[i][Engine.INDEX_QUESTION] = String.join(" ", range);
         }
-        Engine.runGame(GAME_RULES, gameQuestion, correctAnswer);
+        Engine.runGame(GAME_RULES, gameQuestionAndAnswer);
     }
 
     private static String getCorrectAnswer(String[] pRange) {

@@ -6,23 +6,21 @@ public class Prime {
     private static final String GAME_RULES = "Answer 'yes' if number even otherwise answer 'no'.";
 
     public static void gamePrime() {
-        String[] gameQuestion = new String[Engine.ROUND_COUNTER];
-        String[] correctAnswer = new String[Engine.ROUND_COUNTER];
+        String[][] gameQuestionAndAnswer = new String[Engine.ROUND_COUNTER][Engine.SUBARRAY_LENGTH];
         for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int number = Engine.getRandomNumber(Engine.MAX_RANDOM);
-            gameQuestion[i] = String.valueOf(number);
-            correctAnswer[i] = getCorrectAnswer(number);
+            gameQuestionAndAnswer[i][Engine.INDEX_QUESTION] = String.valueOf(number);
+            gameQuestionAndAnswer[i][Engine.INDEX_ANSWER] = isPrimeNumber(number) ? "yes" : "no";
         }
-        Engine.runGame(GAME_RULES, gameQuestion, correctAnswer);
+        Engine.runGame(GAME_RULES, gameQuestionAndAnswer);
     }
 
-    private static String getCorrectAnswer(int number) {
-        String correctAnswer = "yes";
+    private static boolean isPrimeNumber(int number) {
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
-                correctAnswer = "no";
+                return false;
             }
         }
-        return correctAnswer;
+        return true;
     }
 }
