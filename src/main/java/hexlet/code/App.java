@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import java.util.Scanner;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Greet;
@@ -10,7 +11,13 @@ import hexlet.code.games.Prime;
 public class App {
     public static void main(String[] arg) {
         Scanner scanner = new Scanner(System.in);
+        printMenu();
+        String command = scanner.next();
+        System.out.println("Your choice: " + command);
+        switchGame(command);
+    }
 
+    public static void printMenu() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Every");
@@ -19,10 +26,9 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
+    }
 
-        String command = scanner.next();
-        System.out.println("Your choice: " + command);
-
+    public static void switchGame(String command) {
         switch (command) {
             case "1":
                 Greet.gameGreet();
