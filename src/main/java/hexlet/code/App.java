@@ -53,7 +53,6 @@ public class App {
                 break;
             default:
                 System.out.println("Sorry, command not found");
-                break;
         }
     }
 }
