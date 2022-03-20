@@ -30,29 +30,14 @@ public class App {
 
     public static void switchGame(String command) {
         switch (command) {
-            case "1":
-                Greet.gameGreet();
-                break;
-            case "2":
-                Even.gameEven();
-                break;
-            case "3":
-                Calc.gameCalc();
-                break;
-            case "4":
-                Gcd.gameGcd();
-                break;
-            case "5":
-                Progression.gameProgression();
-                break;
-            case "6":
-                Prime.gamePrime();
-                break;
-            case "0":
-                System.out.println("Exit");
-                break;
-            default:
-                System.out.println("Sorry, command not found");
+            case "1" -> Greet.gameGreet();
+            case "2" -> Even.gameEven();
+            case "3" -> Calc.gameCalc();
+            case "4" -> Gcd.gameGcd();
+            case "5" -> Progression.gameProgression();
+            case "6" -> Prime.gamePrime();
+            case "0" -> System.out.println("Exit");
+            default -> System.out.println("Sorry, command not found");
         }
     }
 }

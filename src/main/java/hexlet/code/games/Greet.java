@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Cli;
 
 public class Greet {
     public static void gameGreet() {
-        Engine.getUserName();
+        Cli.constructHello();
     }
 }
